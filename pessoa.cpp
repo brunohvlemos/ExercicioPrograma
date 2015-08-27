@@ -3,12 +3,25 @@
 
 using namespace std;
 
-void Pessoa::setCaracteristicas(string nome, string dataDeNascimento, string pais){
+
+Pessoa::Pessoa(string nome, string dataDeNascimento, string pais){
 	this->nome = nome;
 	this->dataDeNascimento = dataDeNascimento;
 	this->pais = pais;
 };
 
+void Pessoa::adiciona(Pessoa *contato){
+
+};
+void Pessoa::envia(string texto){
+
+};
+// void recebe(Mensagem *m){
+//
+// };
+void verContatos(){
+
+};
 string Pessoa::getNome() {
 	return this->nome;
 };
@@ -19,12 +32,4 @@ string Pessoa::getDataDeNascimento() {
 
 string Pessoa::getPais() {
 	return this->pais;
-};
-
-void Pessoa::setId(int id){
-	 this->Id = id;
-};
-
-int Pessoa::getId(){
-	return this->Id;
 };

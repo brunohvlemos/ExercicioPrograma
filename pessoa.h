@@ -8,18 +8,16 @@ class Pessoa
 {
 private:
 	string  nome, dataDeNascimento, pais;
-	int Id;
 
 public:
-	void setId(int id);
-	int getId();
-	void setCaracteristicas(string nome, string dataDeNascimento,string pais);
+	Pessoa(string nome, string dataDeNascimento,string pais);
+	~Pessoa();
 	string getNome();
 	string getDataDeNascimento();
 	string getPais();
-	//void adiciona();
-	//void envia( string texto );
-	//void recebe ();
-	//void verContatos();
+	void adiciona(Pessoa *contato);
+	void envia( string texto );
+	// void recebe (Mensagem *m);
+	void verContatos();
 };
 #endif //PESSOA_H
