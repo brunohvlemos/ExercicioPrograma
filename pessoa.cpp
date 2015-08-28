@@ -8,10 +8,13 @@ Pessoa::Pessoa(string nome, string dataDeNascimento, string pais){
 	this->nome = nome;
 	this->dataDeNascimento = dataDeNascimento;
 	this->pais = pais;
+	this->contactId = 0;
 };
 
 void Pessoa::adiciona(Pessoa *contato){
-
+			this->contato[contactId] = new Pessoa("x","x","x");
+			this->contato[contactId] = contato;
+			this->contactId++;
 };
 void Pessoa::envia(string texto){
 
@@ -19,8 +22,10 @@ void Pessoa::envia(string texto){
 // void recebe(Mensagem *m){
 //
 // };
-void verContatos(){
-
+void Pessoa::verContatos(){
+			for(int i=0; i<contactId; i++){
+				cout << contato[contactId]->getNome() << endl;
+			}
 };
 string Pessoa::getNome() {
 	return this->nome;
