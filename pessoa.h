@@ -9,7 +9,7 @@ class Pessoa
 private:
 	string  nome, dataDeNascimento, pais;
 	Pessoa* contato[9];
-	int contactId;
+	int contactId=0;
 
 public:
 	Pessoa(string nome, string dataDeNascimento,string pais);
