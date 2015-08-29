@@ -15,6 +15,7 @@ private:
 
 public:
   string name, birth, country;
+  bool ignore;
   Telas();
   int MenuInicial();
   void CadastrarPessoa(int id);

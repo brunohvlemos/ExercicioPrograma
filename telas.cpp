@@ -7,6 +7,7 @@ using namespace std;
 Telas::Telas(){
   this->opcao = 0;
   this->msg = new Mensagem("");
+  this->ignore = false;
 }
 
 int Telas::MenuInicial() {
@@ -15,6 +16,8 @@ int Telas::MenuInicial() {
   cout << "1) Cadastrar pessoa" << endl;
   cout << "2) Logar como pessoa" << endl;
   cout << "3) Terminar" << endl;
+  if(ignore) cin.ignore(100,'\n');
+  ignore = false;
   cin >> this->opcao;
   return this->opcao;
 };
@@ -47,12 +50,7 @@ int Telas::Logar(Pessoa* person[10], int id) {
 
         cout<< endl << "Digite um numero ou 0 para voltar" << endl<< endl;
         cin >> pessoaLogada;
-        if(pessoaLogada!=0){
-            Logado(person,pessoaLogada);
-        }
-        else {
-          return 5;
-        }
+        return pessoaLogada;
 }
 
 int Telas::Logado(Pessoa* person[10],int pessoaLogada){
@@ -64,14 +62,14 @@ int Telas::Logado(Pessoa* person[10],int pessoaLogada){
     return opcao;
 };
 
-/*Esta funcao nao esta funcionando, e eu suponho que seja pq 'listaEnviadas' nao foi inicializada*/
+
 int Telas::mensagensEnviadas(Pessoa* person[10]){
-    cout << "Mensagens Enviadas" <<  pessoaLogada << endl<< "-----------------------" << endl;
+    cout << "Mensagens Enviadas" << endl<< "-----------------------" << endl;
     person[pessoaLogada-1]->listaEnviadas->getMensagens();
     return 0;
 };
 
-/*Esta funcao nao esta funcionando, e eu suponho que seja pq 'listaEnviadas' nao foi inicializada*/
+
 int Telas::mensagensRecebidas(Pessoa* person[10]){
     cout << "Mensagens Recebidas" << endl << "-----------------------" << endl;
     person[pessoaLogada-1]->listaRecebidas->getMensagens();
@@ -82,11 +80,8 @@ int Telas::escreverMensagem(Pessoa *person[10],int id){
     cout << "Digite a mensagem: ";
     cin >> texto;
     msg->setMensagem(texto);
+    person[pessoaLogada-1]->envia(texto);
 
-    for (int i=0; i < id;i++){
-        if(i!=(pessoaLogada-1))
-            person[i]->listaRecebidas->adicionar(msg);
-    }
     return 0;
 };
 
@@ -107,7 +102,6 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
     else{
         person[pessoaLogada-1]->adiciona(person[novoContato-1]);
         cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;
-        Logado(person,pessoaLogada);
         }
     return 1;
   }
