@@ -12,7 +12,7 @@ int main()
 
 	Pessoa* person [10];
 
-	Telas* tela = new Telas;
+	Telas* tela = new Telas();
 
 	while (opcaoMenu != 3){
 			opcaoMenu = tela->MenuInicial();

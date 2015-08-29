@@ -9,7 +9,9 @@ Pessoa::Pessoa(string nome, string dataDeNascimento, string pais){
 	this->dataDeNascimento = dataDeNascimento;
 	this->pais = pais;
 	this->contactId = 0;
-	//this->listaRecebidas = new ListaDeMensagens();
+	this->novaLista = true;
+	this->listaRecebidas = new ListaDeMensagens();
+	this->listaEnviadas = new ListaDeMensagens();
 };
 
 
@@ -22,12 +24,17 @@ void Pessoa::adiciona(Pessoa *contato){
 void Pessoa::envia(string texto){
 		for(int i=0; i<contactId; i++){
 			Mensagem* msg = new Mensagem(texto);
-			listaEnviadas->adicionar(msg);
+		/*	if(novaLista){
+				this->listaEnviadas = new ListaDeMensagens();
+				this->listaRecebidas = new ListaDeMensagens();
+				novaLista = false;
+			}*/
+			this->listaEnviadas->adicionar(msg);
 			contato[i]->recebe(msg);
 		}
 };
  void Pessoa::recebe(Mensagem *msg){
-	 listaRecebidas->adicionar(msg);
+   this->listaRecebidas->adicionar(msg);
 };
 void Pessoa::verContatos(){
 /*ta dando erro com o contactId quando chama a função verContatos depois que já tem algum contato adicionado

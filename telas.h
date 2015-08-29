@@ -7,14 +7,15 @@ using namespace std;
 
 class Telas {
 private:
-  int opcao=0;
+  int opcao;
   int pessoaLogada;
   int novoContato;
-  Mensagem* msg = new Mensagem("");
+  Mensagem* msg;
   string texto;
 
 public:
   string name, birth, country;
+  Telas();
   int MenuInicial();
   void CadastrarPessoa(int id);
   int Logar(Pessoa* person[10], int id);

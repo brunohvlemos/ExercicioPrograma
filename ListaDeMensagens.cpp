@@ -13,8 +13,8 @@ ListaDeMensagens::~ListaDeMensagens(){
 
 void ListaDeMensagens::adicionar(Mensagem* m){
   if(this->getCabeca() == NULL){
-    cabeca = new Elemento;
-    atual = new Elemento;
+    cabeca = new Elemento();
+    atual = new Elemento();
     atual->setMensagem(m);
     atual->setProximo(NULL);
     cabeca = atual;

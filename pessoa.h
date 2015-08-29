@@ -2,6 +2,7 @@
 #define PESSOA_H
 #include <iostream>
 #include "ListaDeMensagens.h"
+#include "Mensagem.h"
 
 using namespace std;
 
@@ -11,13 +12,15 @@ private:
 	string  nome, dataDeNascimento, pais;
 	Pessoa* contato[9];
 	int contactId;
+	bool novaLista;
+
 
 
 public:
-	Pessoa(string nome, string dataDeNascimento,string pais);
-	~Pessoa();
 	ListaDeMensagens* listaEnviadas;
 	ListaDeMensagens* listaRecebidas;
+	Pessoa(string nome, string dataDeNascimento,string pais);
+	~Pessoa();
 	string getNome();
 	string getDataDeNascimento();
 	string getPais();

@@ -1,7 +1,13 @@
 #include "telas.h"
+#include "ListaDeMensagens.h"
 #include <iostream>
 
 using namespace std;
+
+Telas::Telas(){
+  this->opcao = 0;
+  this->msg = new Mensagem("");
+}
 
 int Telas::MenuInicial() {
   cout << "PoliSocial" << endl;

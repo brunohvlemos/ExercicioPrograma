@@ -17,7 +17,7 @@ class Elemento
         e por isso tive que deixar msg publico. */
         Mensagem* msg;
     private:
-      Elemento* proxElemento=new Elemento;
+      Elemento* proxElemento;
 
 };
 
