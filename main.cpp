@@ -18,6 +18,7 @@ int main()
 	while (opcao != 3){
 			opcao = tela->MenuInicial();
 		switch( opcao ){
+            //case 0: break;
 			case 1:
 						tela->CadastrarPessoa(id);
 						person[id] = new Pessoa (tela->name, tela->birth, tela->country);
@@ -26,12 +27,15 @@ int main()
 
 			case 2:
 						while(opcao != 0){
-								opcao = tela->Logar(person, id);
+								opcao = tela->Logar(person, id-1);
 						switch(opcao){
-							case 1: tela->adicionarContato(person,id);
+							case 1: opcao = tela->adicionarContato(person,id-1);
+							break;
+							//case 2:
 						}
 					}
 					break;
+
 		}
 	}
 	return 0;

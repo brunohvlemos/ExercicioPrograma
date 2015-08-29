@@ -17,6 +17,7 @@ public:
   int Logar(Pessoa* person[10], int id);
   void Opcoes();
   int adicionarContato(Pessoa* person[10], int id);
+  int Logado(Pessoa* person[10],int pessoaEscolhida);
 
   };
 

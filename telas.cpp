@@ -15,7 +15,7 @@ int Telas::MenuInicial() {
 
 void Telas::CadastrarPessoa(int id){
   if(id < 10){
-    cout << "Informe os dados da pessoa:" << endl;
+    cout<< endl << "Informe os dados da pessoa:" << endl;
     cout << "Nome: ";
     cin.ignore(100,'\n');
     getline(cin, this->name);
@@ -23,10 +23,10 @@ void Telas::CadastrarPessoa(int id){
     getline(cin, this->birth);
     cout << "Pais: ";
     getline(cin, this->country);
-    cout << "Pessoa cadastrada com sucesso" << endl;
+    cout << "Pessoa cadastrada com sucesso" << endl<< endl;
   }
   else {
-    cout << "Numero maximo de pessoas cadastradas" << endl;
+    cout << "Numero maximo de pessoas cadastradas" << endl<< endl;
   }
 }
 
@@ -34,35 +34,47 @@ int Telas::Logar(Pessoa* person[10], int id) {
 
   cout << "Escolha uma das pessoas:" << endl;
 
-        for(int i = 0; i<(id) ; i++){
+        for(int i = 0; i<=(id) ; i++){
 
               cout << (i+1) << ": " << person[i]->getNome() << endl;
         }
 
-        cout << "Digite um numero ou 0 para voltar" << endl;
+        cout<< endl << "Digite um numero ou 0 para voltar" << endl<< endl;
         cin >> pessoaEscolhida;
         if(opcao!=0){
-          cout << "------------------------------" << endl << "Pessoa: " << person[pessoaEscolhida-1]->getNome() << endl  << person[pessoaEscolhida-1]->getDataDeNascimento() << " | " << person[pessoaEscolhida-1]->getPais() << endl;
-          cout << "Contatos: " << endl;
-          person[pessoaEscolhida-1]->verContatos();
-          cout << endl << "------------------------------" << endl << endl << "Escolha uma opcao:" << endl << "1) Adicionar contato" << endl << "2) Ver mensagens enviadas" << endl << "3) Ver mensagens recebidas" << endl << "4) Escrever mensagem" << endl << "0) Voltar" << endl;
-          cin >> opcao;
-          return opcao;
+            Logado(person,pessoaEscolhida);
         }
         else {
           return 5;
         }
 }
+int Telas::Logado(Pessoa* person[10],int pessoaEscolhida){
+    cout << "------------------------------" << endl << "Pessoa: " << person[pessoaEscolhida-1]->getNome() << endl  << person[pessoaEscolhida-1]->getDataDeNascimento() << " | " << person[pessoaEscolhida-1]->getPais() << endl;
+    cout << "Contatos: " << endl;
+    person[pessoaEscolhida-1]->verContatos();
+    cout << endl << "------------------------------" << endl << endl << "Escolha uma opcao:" << endl << "1) Adicionar contato" << endl << "2) Ver mensagens enviadas" << endl << "3) Ver mensagens recebidas" << endl << "4) Escrever mensagem" << endl << "0) Voltar" << endl;
+    cin >> opcao;
+    return opcao;
+};
 
 int Telas::adicionarContato(Pessoa* person[10], int id){
   cout << "Pessoas" << endl << "--------" << endl;
-  for(int i=0; i<id; i++){
+  for(int i=0; i<=id; i++){
     cout << (i+1) << ") " << person[i]->getNome() << endl;
   }
   cout << "Escolha um contato para adicionar ou 0 para voltar: ";
   cin >> pessoaEscolhida;
 
-  if(pessoaEscolhida == 0) return 0;
-  else {person[id]->adiciona(person[pessoaEscolhida-1]);
-  return 1;}
+  if(pessoaEscolhida == 0)
+    return 0;
+  else {
+    if((id-1)==(pessoaEscolhida-1))
+        return 1;
+    else{
+        person[id-1]->adiciona(person[pessoaEscolhida-1]);
+        cout << endl << person[id-1]->getNome() << " contactado a " << person[pessoaEscolhida-1]->getNome()<<endl<<endl;
+        Logado(person,id);
+        }
+    return 0;
+  }
 }

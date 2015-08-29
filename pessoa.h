@@ -8,7 +8,7 @@ class Pessoa
 {
 private:
 	string  nome, dataDeNascimento, pais;
-	Pessoa* contato[10];
+	Pessoa* contato[9];
 	int contactId;
 
 public:
