@@ -40,18 +40,19 @@ int Telas::Logar(Pessoa* person[10], int id) {
         }
 
         cout<< endl << "Digite um numero ou 0 para voltar" << endl<< endl;
-        cin >> pessoaEscolhida;
-        if(opcao!=0){
-            Logado(person,pessoaEscolhida);
+        cin >> pessoaLogada;
+        if(pessoaLogada!=0){
+            Logado(person,pessoaLogada);
         }
         else {
           return 5;
         }
 }
-int Telas::Logado(Pessoa* person[10],int pessoaEscolhida){
-    cout << "------------------------------" << endl << "Pessoa: " << person[pessoaEscolhida-1]->getNome() << endl  << person[pessoaEscolhida-1]->getDataDeNascimento() << " | " << person[pessoaEscolhida-1]->getPais() << endl;
+
+int Telas::Logado(Pessoa* person[10],int pessoaLogada){
+    cout << "------------------------------" << endl << "Pessoa: " << person[pessoaLogada-1]->getNome() << endl  << person[pessoaLogada-1]->getDataDeNascimento() << " | " << person[pessoaLogada-1]->getPais() << endl;
     cout << "Contatos: " << endl;
-    person[pessoaEscolhida-1]->verContatos();
+    person[pessoaLogada-1]->verContatos();
     cout << endl << "------------------------------" << endl << endl << "Escolha uma opcao:" << endl << "1) Adicionar contato" << endl << "2) Ver mensagens enviadas" << endl << "3) Ver mensagens recebidas" << endl << "4) Escrever mensagem" << endl << "0) Voltar" << endl;
     cin >> opcao;
     return opcao;
@@ -63,18 +64,18 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
     cout << (i+1) << ") " << person[i]->getNome() << endl;
   }
   cout << "Escolha um contato para adicionar ou 0 para voltar: ";
-  cin >> pessoaEscolhida;
+  cin >> novoContato;
 
-  if(pessoaEscolhida == 0)
+  if(novoContato == 0)
     return 0;
   else {
-    if((id-1)==(pessoaEscolhida-1))
+    if((novoContato-1)==(pessoaLogada-1))
         return 1;
     else{
-        person[id-1]->adiciona(person[pessoaEscolhida-1]);
-        cout << endl << person[id-1]->getNome() << " contactado a " << person[pessoaEscolhida-1]->getNome()<<endl<<endl;
-        Logado(person,id);
+        person[pessoaLogada-1]->adiciona(person[novoContato-1]);
+        cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;
+        Logado(person,pessoaLogada);
         }
-    return 0;
+    return 1;
   }
 }

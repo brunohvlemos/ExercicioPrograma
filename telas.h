@@ -7,8 +7,9 @@ using namespace std;
 
 class Telas {
 private:
-  int opcao;
-  int pessoaEscolhida;
+  int opcao=0;
+  int pessoaLogada;
+  int novoContato;
 
 public:
   string name, birth, country;

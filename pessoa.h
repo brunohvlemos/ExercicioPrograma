@@ -13,6 +13,7 @@ private:
 	ListaDeMensagens* listaEnviadas;
 	ListaDeMensagens* listaRecebidas;
 
+
 public:
 	Pessoa(string nome, string dataDeNascimento,string pais);
 	~Pessoa();
