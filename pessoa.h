@@ -10,6 +10,8 @@ private:
 	string  nome, dataDeNascimento, pais;
 	Pessoa* contato[9];
 	int contactId;
+	ListaDeMensagens* listaEnviadas;
+	ListaDeMensagens* listaRecebidas;
 
 public:
 	Pessoa(string nome, string dataDeNascimento,string pais);
