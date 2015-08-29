@@ -58,6 +58,33 @@ int Telas::Logado(Pessoa* person[10],int pessoaLogada){
     return opcao;
 };
 
+/*Esta funcao nao esta funcionando, e eu suponho que seja pq 'listaEnviadas' nao foi inicializada*/
+int Telas::mensagensEnviadas(Pessoa* person[10]){
+    cout << "Mensagens Enviadas" <<  pessoaLogada << endl<< "-----------------------" << endl;
+    person[pessoaLogada-1]->listaEnviadas->getMensagens();
+    return 0;
+};
+
+/*Esta funcao nao esta funcionando, e eu suponho que seja pq 'listaEnviadas' nao foi inicializada*/
+int Telas::mensagensRecebidas(Pessoa* person[10]){
+    cout << "Mensagens Recebidas" << endl << "-----------------------" << endl;
+    person[pessoaLogada-1]->listaRecebidas->getMensagens();
+    return 0;
+};
+
+int Telas::escreverMensagem(Pessoa *person[10],int id){
+    cout << "Digite a mensagem: ";
+    cin >> texto;
+    msg->setMensagem(texto);
+
+    for (int i=0; i < id;i++){
+        if(i!=(pessoaLogada-1))
+            person[i]->listaRecebidas->adicionar(msg);
+    }
+    return 0;
+};
+
+
 int Telas::adicionarContato(Pessoa* person[10], int id){
   cout << "Pessoas" << endl << "--------" << endl;
   for(int i=0; i<=id; i++){
@@ -78,4 +105,4 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
         }
     return 1;
   }
-}
+};

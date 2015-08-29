@@ -1,19 +1,22 @@
 #ifndef MENSAGEM_H
 #define MENSAGEM_H
+#include <iostream>
 
+using namespace std;
 
 class Mensagem
 {
-    public:
-        Mensagem(string msg);
-        int getCurtidas();
-        void curtir();
-        void printMensagem();
-        virtual ~Mensagem();
-    protected:
     private:
       int curtidas;
       string msg;
+    public:
+        int getCurtidas();
+        void curtir();
+        //void printMensagem();
+        void setMensagem(string msg);
+        Mensagem(string msg);
+        string getMensagem();
+        ~Mensagem();
 };
 
 #endif // MENSAGEM_H

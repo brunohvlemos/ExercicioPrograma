@@ -4,7 +4,7 @@
 using namespace std;
 
 ListaDeMensagens::ListaDeMensagens(){
-
+    this->tamanho = 0;
 };
 
 ListaDeMensagens::~ListaDeMensagens(){
@@ -13,8 +13,8 @@ ListaDeMensagens::~ListaDeMensagens(){
 
 void ListaDeMensagens::adicionar(Mensagem* m){
   if(this->getCabeca() == NULL){
-    Elemento* cabeca = new Elemento;
-    Elemento* atual = new Elemento;
+    cabeca = new Elemento;
+    atual = new Elemento;
     atual->setMensagem(m);
     atual->setProximo(NULL);
     cabeca = atual;
@@ -33,15 +33,18 @@ void ListaDeMensagens::adicionar(Mensagem* m){
 
 Elemento* ListaDeMensagens::getCabeca(){
   return this->cabeca;
-}
-
-void ListaDeMensagens::getMensagensEnviadas(){
-
 };
 
-void ListaDeMensagens::getMensagensRecebidas(){
-  cout  << "1) " << cabeca->getMensagem()->printMensagem() << "( " << cabeca->getMensagem()->getCurtidas() << " curtidas)" << endl;
+int ListaDeMensagens::getTamanho(){
+    return this->tamanho;
+};
+
+//void ListaDeMensagens::getMensagensEnviadas(){
+//
+//};
+
+void ListaDeMensagens::getMensagens(){
   for(int i=0; i<tamanho; i++){
-  cout  << (i+2) << ") " << cabeca->getMensagem()->printMensagem() << "( " << cabeca->getMensagem()->getCurtidas() << " curtidas)" << endl;
+  cout  << (i+1) << ") " << cabeca->msg->getMensagem() << "( " << cabeca->msg->getCurtidas() << " curtidas)" << endl;
   }
 };

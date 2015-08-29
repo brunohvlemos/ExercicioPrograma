@@ -10,6 +10,8 @@ private:
   int opcao=0;
   int pessoaLogada;
   int novoContato;
+  Mensagem* msg = new Mensagem("");
+  string texto;
 
 public:
   string name, birth, country;
@@ -19,6 +21,9 @@ public:
   void Opcoes();
   int adicionarContato(Pessoa* person[10], int id);
   int Logado(Pessoa* person[10],int pessoaEscolhida);
+  int mensagensEnviadas(Pessoa *person[10]);
+  int mensagensRecebidas(Pessoa *person[10]);
+  int escreverMensagem(Pessoa *person[10],int id);
 
   };
 

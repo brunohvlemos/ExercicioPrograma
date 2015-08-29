@@ -9,7 +9,9 @@ Pessoa::Pessoa(string nome, string dataDeNascimento, string pais){
 	this->dataDeNascimento = dataDeNascimento;
 	this->pais = pais;
 	this->contactId = 0;
+	//this->listaRecebidas = new ListaDeMensagens();
 };
+
 
 void Pessoa::adiciona(Pessoa *contato){
 			this->contato[contactId] = new Pessoa("x","x","x");
@@ -24,7 +26,7 @@ void Pessoa::envia(string texto){
 			contato[i]->recebe(msg);
 		}
 };
- void Pessoa::recebe(Mensagem *m){
+ void Pessoa::recebe(Mensagem *msg){
 	 listaRecebidas->adicionar(msg);
 };
 void Pessoa::verContatos(){

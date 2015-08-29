@@ -1,21 +1,24 @@
 #ifndef ELEMENTO_H
 #define ELEMENTO_H
+#include "Mensagem.h"
 
 
 class Elemento
 {
     public:
         Elemento();
-        virtual ~Elemento();
-        Elemento* proximo();
+        ~Elemento();
+        Elemento proximo();
+        Mensagem getMensagem();
         void setProximo(Elemento* prox);
-        Mensagem* getMensagem();
         void setMensagem(Mensagem* msg);
         int chave;
-    protected:
+        /*por algum motivo nao consigo usar o getMensagem (deixei comentado no Elemento.cpp
+        e por isso tive que deixar msg publico. */
+        Mensagem* msg;
     private:
-      Elemento* proxElemento;
-      Mensagem* msg;
+      Elemento* proxElemento=new Elemento;
+
 };
 
 #endif // ELEMENTO_H

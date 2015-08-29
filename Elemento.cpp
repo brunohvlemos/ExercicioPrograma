@@ -11,15 +11,16 @@ Elemento::~Elemento()
 }
 
 Elemento Elemento::proximo(){
-  return this->proxElemento;
+//  return this->proxElemento;
 };
+
+/*
+Mensagem Elemento::getMensagem(){
+    return msg;
+};*/
 
 void Elemento::setProximo(Elemento* prox){
   this->proxElemento = prox;
-};
-
-Mensagem Elemento::getMensagem(){
-    return this->msg;
 };
 
 void Elemento::setMensagem(Mensagem* msg){

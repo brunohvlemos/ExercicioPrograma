@@ -1,18 +1,21 @@
 #ifndef LISTADEMENSAGENS_H
 #define LISTADEMENSAGENS_H
 #include <iostream>
+#include "Elemento.h"
 
 class ListaDeMensagens {
 private:
-  int tamanho;
+  int tamanho,numMsg;
+  Elemento* cabeca = new Elemento();
+  Elemento* atual = new Elemento();
 
 public:
   ListaDeMensagens();
   ~ListaDeMensagens();
+  int getTamanho();
   void adicionar(Mensagem* m);
   Elemento* getCabeca();
-  void getMensagensRecebidas();
-  void getMensagensEnviadas();
-
-
-}
+  void getMensagens();
+  //void getMensagensEnviadas();
+};
+#endif
