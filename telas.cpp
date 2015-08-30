@@ -66,14 +66,14 @@ int Telas::Logado(Pessoa* person[10],int pessoaLogada){
 int Telas::mensagensEnviadas(Pessoa* person[10]){
     cout << "Mensagens Enviadas" << endl<< "-----------------------" << endl;
     person[pessoaLogada-1]->listaEnviadas->getMensagens();
-    return 0;
+    return 1;
 };
 
 
 int Telas::mensagensRecebidas(Pessoa* person[10]){
     cout << "Mensagens Recebidas" << endl << "-----------------------" << endl;
     person[pessoaLogada-1]->listaRecebidas->getMensagens();
-    return 0;
+    return 1;
 };
 
 int Telas::escreverMensagem(Pessoa *person[10],int id){
@@ -82,7 +82,7 @@ int Telas::escreverMensagem(Pessoa *person[10],int id){
     msg->setMensagem(texto);
     person[pessoaLogada-1]->envia(texto);
 
-    return 0;
+    return 1;
 };
 
 
