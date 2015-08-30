@@ -9,7 +9,7 @@ private:
   int tamanho,numMsg,i;
   Elemento* cabeca;
   Elemento* atual;
-  Elemento* procura;
+  Elemento* procura,*lixo;
 
 public:
   ListaDeMensagens();

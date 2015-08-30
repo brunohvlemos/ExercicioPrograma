@@ -7,7 +7,7 @@ using namespace std;
 
 class Telas {
 private:
-  int opcao;
+  int opcao,i;
   int pessoaLogada;
   int novoContato;
   Mensagem* msg;

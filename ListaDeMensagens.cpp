@@ -53,9 +53,13 @@ int ListaDeMensagens::getTamanho(){
 /*procura e retorna um elemento atraves de sua chave, que entra no metodo como 'indice'*/
 Elemento* ListaDeMensagens::procurar(int indice){
     procura = new Elemento;
+    /*tive que usar esse Elemento 'lixo' para fazer a troca de valores. se usar o *procura=procura->getProximo() direto, o
+    valor da cabeca passa a ser alterado para o de procura toda vez que esse ultimo muda*/
+    lixo = new Elemento;
     procura = cabeca;
     while (procura!=NULL && procura->chave!=indice){
-        *procura = procura->getProximo();
+        *lixo = procura->getProximo();
+        procura = lixo;
     }
     return procura;
 };
@@ -65,7 +69,4 @@ void ListaDeMensagens::getMensagens(){
   for(i=0; i<tamanho; i++){
   cout  << (i+1) << ") " << procurar(i)->msg->getMensagem() << "( " << procurar(i)->msg->getCurtidas() << " curtidas)" << endl;
   }
-  cout << "Digite o numero da mensagem para curtir ou 0 para voltar:";
-  cin >> i;
-  procurar(i-1)->msg->curtir();
 };

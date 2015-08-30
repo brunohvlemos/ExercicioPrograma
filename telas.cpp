@@ -78,6 +78,10 @@ int Telas::mensagensEnviadas(Pessoa* person[10]){
 int Telas::mensagensRecebidas(Pessoa* person[10]){
     cout << "Mensagens Recebidas" << endl << "-----------------------" << endl;
     person[pessoaLogada-1]->listaRecebidas->getMensagens();
+    cout << "Digite o numero da mensagem para curtir ou 0 para voltar:";
+    cin >> i;
+    if(i!=0)
+        person[pessoaLogada-1]->listaRecebidas->procurar(i-1)->msg->curtir();
     return 1;
 };
 
@@ -114,11 +118,7 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
             cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;
         }else{
             cout << person[novoContato-1] << " ja esta adicionado como contato!" << endl ;
-<<<<<<< HEAD
-            return 1;
-=======
             return 0;
->>>>>>> 5b05c656207e6de6d17e6669d0f297688c8934b0
         }
     }
     return 1;
