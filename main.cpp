@@ -34,7 +34,10 @@ int main()
           //  if(opcaoLogado!=0){
 							system("clear");
               pessoaLogada = tela->Logar(person, id-1);//	}
-						if (pessoaLogada ==0) retornoParaLogar = false;
+						if (pessoaLogada ==0){
+						 retornoParaLogar = false;
+						 break;
+					 }
 						while(opcaoLogado != 0){
 						if(clear)	system("clear");
 						clear = true;
