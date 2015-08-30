@@ -44,7 +44,8 @@ int ListaDeMensagens::getTamanho(){
 //};
 
 void ListaDeMensagens::getMensagens(){
+  cout  << "1) " << cabeca->msg->getMensagem() << "( " << cabeca->msg->getCurtidas() << " curtidas )" << endl;
   for(int i=0; i<tamanho; i++){
-  cout  << (i+1) << ") " << cabeca->msg->getMensagem() << "( " << cabeca->msg->getCurtidas() << " curtidas)" << endl;
+  cout  << (i+2) << ") " << atual->msg->getMensagem() << "( " << atual->msg->getCurtidas() << " curtidas )" << endl;
   }
 };
