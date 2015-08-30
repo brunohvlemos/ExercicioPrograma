@@ -13,9 +13,6 @@ private:
 	Pessoa* contato[9];
 	int contactId;
 	bool novaLista;
-
-
-
 public:
 	ListaDeMensagens* listaEnviadas;
 	ListaDeMensagens* listaRecebidas;

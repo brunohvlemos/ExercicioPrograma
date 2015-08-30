@@ -29,8 +29,3 @@ void Mensagem::setMensagem(string msg){
 void Mensagem::curtir(){
   this->curtidas++;
 };
-
-//void Mensagem::printMensagem(){
-//  cout << this->msg << endl;
-//}
-

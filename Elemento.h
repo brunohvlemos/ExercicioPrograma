@@ -8,8 +8,8 @@ class Elemento
     public:
         Elemento();
         ~Elemento();
-        Elemento proximo();
-        Mensagem getMensagem();
+        Elemento getProximo();
+        //Mensagem *getMensagem();
         void setProximo(Elemento* prox);
         void setMensagem(Mensagem* msg);
         int chave;
