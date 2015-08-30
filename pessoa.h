@@ -25,5 +25,6 @@ public:
 	void envia( string texto );
 	void recebe (Mensagem *m);
 	void verContatos();
+	bool contemContato(Pessoa *contato);
 };
 #endif //PESSOA_H

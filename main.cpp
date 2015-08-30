@@ -9,16 +9,13 @@ using namespace std;
 
 int main()
 {
-	string nome, dataDeNascimento, pais;
 	int opcaoMenu=1,opcaoLogado, id = 0, pessoaLogada;
 	bool clear = true, retornoParaLogar = true;
-
 	Pessoa* person [10];
-
 	Telas* tela = new Telas();
 
 	while (opcaoMenu != 3){
-		  system("clear");
+		    system("clear");
 			opcaoMenu = tela->MenuInicial();
 			opcaoLogado=1;
 			retornoParaLogar = true;
@@ -31,9 +28,8 @@ int main()
 						break;
 			case 2:
 					while(retornoParaLogar){
-          //  if(opcaoLogado!=0){
-							system("clear");
-              pessoaLogada = tela->Logar(person, id-1);//	}
+                        system("clear");
+                        pessoaLogada = tela->Logar(person, id-1);
 						if (pessoaLogada ==0){
 						 retornoParaLogar = false;
 						 break;
