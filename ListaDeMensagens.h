@@ -9,6 +9,7 @@ private:
   int tamanho,numMsg;
   Elemento* cabeca;
   Elemento* atual;
+  Elemento* procura;
 
 public:
   ListaDeMensagens();
@@ -16,7 +17,7 @@ public:
   int getTamanho();
   void adicionar(Mensagem* m);
   Elemento* getCabeca();
+  Elemento* procurar(int indice);
   void getMensagens();
-  //void getMensagensEnviadas();
 };
 #endif

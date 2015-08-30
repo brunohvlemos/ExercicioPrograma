@@ -10,17 +10,17 @@ Elemento::~Elemento()
     //dtor
 }
 
-Elemento Elemento::proximo(){
-//  return this->proxElemento;
-};
-
-/*
-Mensagem Elemento::getMensagem(){
-    return msg;
-};*/
+//Mensagem* Elemento::getMensagem(){
+//    return msg;
+//};
 
 void Elemento::setProximo(Elemento* prox){
   this->proxElemento = prox;
+};
+
+Elemento Elemento::getProximo(){
+    return *proxElemento;
+
 };
 
 void Elemento::setMensagem(Mensagem* msg){

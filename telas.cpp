@@ -78,10 +78,10 @@ int Telas::mensagensRecebidas(Pessoa* person[10]){
 
 int Telas::escreverMensagem(Pessoa *person[10],int id){
     cout << "Digite a mensagem: ";
-    cin >> texto;
+    cin.ignore(100,'\n');
+    getline(cin,texto);
     msg->setMensagem(texto);
     person[pessoaLogada-1]->envia(texto);
-
     return 1;
 };
 

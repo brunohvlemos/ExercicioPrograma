@@ -12,7 +12,6 @@ class Mensagem
     public:
         int getCurtidas();
         void curtir();
-        //void printMensagem();
         void setMensagem(string msg);
         Mensagem(string msg);
         string getMensagem();
