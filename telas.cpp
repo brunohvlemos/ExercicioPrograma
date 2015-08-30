@@ -114,7 +114,11 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
             cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;
         }else{
             cout << person[novoContato-1] << " ja esta adicionado como contato!" << endl ;
+<<<<<<< HEAD
+            return 1;
+=======
             return 0;
+>>>>>>> 5b05c656207e6de6d17e6669d0f297688c8934b0
         }
     }
     return 1;

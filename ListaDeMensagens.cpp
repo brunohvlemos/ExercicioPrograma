@@ -6,6 +6,8 @@ using namespace std;
 /*ctor*/
 ListaDeMensagens::ListaDeMensagens(){
     this->tamanho = 0;
+    cabeca = new Elemento();
+    cabeca = NULL;
 };
 
 /*dtor*/
@@ -17,7 +19,6 @@ ListaDeMensagens::~ListaDeMensagens(){
 void ListaDeMensagens::adicionar(Mensagem* m){
   /*Caso a lista ainda nao tenha nenhum elemento*/
   if(this->getCabeca() == NULL){
-    cabeca = new Elemento();
     atual = new Elemento();
     atual->setMensagem(m);
     atual->setProximo(NULL);

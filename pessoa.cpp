@@ -17,7 +17,7 @@ Pessoa::Pessoa(string nome, string dataDeNascimento, string pais){
 /*Verifica se a pessoa cadastrada ja contem um determinado contato*/
 bool Pessoa::contemContato(Pessoa *contato){
     for (int i =0;i<contactId;i++){
-        if(this->contato[contactId]==contato){
+        if(this->contato[i]==contato){
             return true;
         }
     }
@@ -26,6 +26,7 @@ bool Pessoa::contemContato(Pessoa *contato){
 
 /*Adiciona um novo contato para a pessoa logada*/
 void Pessoa::adiciona(Pessoa *contato){
+
 			this->contato[contactId] = new Pessoa("x","x","x");
 			this->contato[contactId] = contato;
 			this->contactId++;
