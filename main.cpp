@@ -38,6 +38,7 @@ int main()
 						 retornoParaLogar = false;
 						 break;
 					 }
+					 opcaoLogado = 1;
 						while(opcaoLogado != 0){
 						if(clear)	system("clear");
 						clear = true;
