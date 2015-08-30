@@ -26,6 +26,7 @@ void Mensagem::setMensagem(string msg){
     this->msg = msg;
 };
 
+/*Aumenta as curtidas de uma mensagem*/
 void Mensagem::curtir(){
   this->curtidas++;
 };
