@@ -108,7 +108,7 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
     if((novoContato-1)==(pessoaLogada-1))
         return 1;
     else{
-        /*Esse 'if' exclui a possibilidade de adicioar um contato repetido*/
+        /*Esse 'if' exclui a possibilidade de adicionar um contato repetido*/
         if(!person[pessoaLogada-1]->contemContato(person[novoContato-1])){
             person[pessoaLogada-1]->adiciona(person[novoContato-1]);
             cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;

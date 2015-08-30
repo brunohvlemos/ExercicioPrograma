@@ -30,11 +30,11 @@ void ListaDeMensagens::adicionar(Mensagem* m){
   else {
     Elemento* novoElemento = new Elemento;
     novoElemento->chave = numMsg;
-    numMsg++;
     novoElemento->setMensagem(m);
     novoElemento->setProximo(NULL);
     atual->setProximo(novoElemento);
     atual = novoElemento;
+    numMsg++;
     tamanho++;
   }
 };
@@ -61,7 +61,10 @@ Elemento* ListaDeMensagens::procurar(int indice){
 
 /*Imprime todas as mensagens de uma determinada lista*/
 void ListaDeMensagens::getMensagens(){
-  for(int i=0; i<tamanho; i++){
+  for(i=0; i<tamanho; i++){
   cout  << (i+1) << ") " << procurar(i)->msg->getMensagem() << "( " << procurar(i)->msg->getCurtidas() << " curtidas)" << endl;
   }
+  cout << "Digite o numero da mensagem para curtir ou 0 para voltar:";
+  cin >> i;
+  procurar(i-1)->msg->curtir();
 };
