@@ -6,10 +6,10 @@
 
 class ListaDeMensagens {
 private:
-  int tamanho,numMsg;
+  int tamanho,numMsg,i;
   Elemento* cabeca;
   Elemento* atual;
-  Elemento* procura;
+  Elemento* procura,*lixo;
 
 public:
   ListaDeMensagens();

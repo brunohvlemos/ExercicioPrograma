@@ -42,15 +42,16 @@ void Pessoa::envia(string texto){
 };
 
 /*Adiciona a lista de mensagens recebidas uma nova mensagem recebida*/
- void Pessoa::recebe(Mensagem *msg){
+void Pessoa::recebe(Mensagem *msg){
+    cout << "Agora estou tratando da pessoa " << getNome() << endl;
    this->listaRecebidas->adicionar(msg);
 };
 
 /*Imprime todos os nomes dos contatos de uma pessoa*/
 void Pessoa::verContatos(){
-			for(int i=0; i<contactId; i++){
-				cout << contato[i]->getNome() << endl;
-			}
+    for(int i=0; i<contactId; i++){
+        cout << contato[i]->getNome() << endl;
+    }
 };
 
 string Pessoa::getNome() {

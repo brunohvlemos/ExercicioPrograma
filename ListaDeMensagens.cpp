@@ -31,11 +31,11 @@ void ListaDeMensagens::adicionar(Mensagem* m){
   else {
     Elemento* novoElemento = new Elemento;
     novoElemento->chave = numMsg;
-    numMsg++;
     novoElemento->setMensagem(m);
     novoElemento->setProximo(NULL);
     atual->setProximo(novoElemento);
     atual = novoElemento;
+    numMsg++;
     tamanho++;
   }
 };
@@ -53,16 +53,20 @@ int ListaDeMensagens::getTamanho(){
 /*procura e retorna um elemento atraves de sua chave, que entra no metodo como 'indice'*/
 Elemento* ListaDeMensagens::procurar(int indice){
     procura = new Elemento;
+    /*tive que usar esse Elemento 'lixo' para fazer a troca de valores. se usar o *procura=procura->getProximo() direto, o
+    valor da cabeca passa a ser alterado para o de procura toda vez que esse ultimo muda*/
+    lixo = new Elemento;
     procura = cabeca;
     while (procura!=NULL && procura->chave!=indice){
-        *procura = procura->getProximo();
+        *lixo = procura->getProximo();
+        procura = lixo;
     }
     return procura;
 };
 
 /*Imprime todas as mensagens de uma determinada lista*/
 void ListaDeMensagens::getMensagens(){
-  for(int i=0; i<tamanho; i++){
+  for(i=0; i<tamanho; i++){
   cout  << (i+1) << ") " << procurar(i)->msg->getMensagem() << "( " << procurar(i)->msg->getCurtidas() << " curtidas)" << endl;
   }
 };
