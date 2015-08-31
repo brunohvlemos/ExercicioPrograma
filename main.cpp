@@ -15,17 +15,25 @@ int main()
 	Telas* tela = new Telas();
 
 	while (opcaoMenu != 3){
-		    system("clear");
+		  if(clear)  system("clear");
+			clear = true;
 			opcaoMenu = tela->MenuInicial();
 			opcaoLogado=1;
 			retornoParaLogar = true;
 		switch( opcaoMenu ){
 			case 1:
+						if(id<10){
 						system("clear");
-						tela->CadastrarPessoa(id);
+						tela->CadastrarPessoa();
 						person[id] = new Pessoa (tela->name, tela->birth, tela->country);
 						id++;
 						break;
+					}
+					else{
+						cout << "Numero maximo de pessoas cadastradas" << endl<< endl;
+						clear = false;
+						break;
+					}
 			case 2:
 					while(retornoParaLogar){
                         system("clear");

@@ -18,7 +18,7 @@ public:
   bool ignore;
   Telas();
   int MenuInicial();
-  void CadastrarPessoa(int id);
+  void CadastrarPessoa();
   int Logar(Pessoa* person[10], int id);
   void Opcoes();
   int adicionarContato(Pessoa* person[10], int id);

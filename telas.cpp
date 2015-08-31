@@ -25,9 +25,8 @@ int Telas::MenuInicial() {
 };
 
 /*Tela para cadsatro de pessoa*/
-void Telas::CadastrarPessoa(int id){
-  /*Impede que o cadastro ultrapasse 10 pessoas*/
-  if(id < 10){
+void Telas::CadastrarPessoa(){
+
     cout<< endl << "Informe os dados da pessoa:" << endl;
     cout << "Nome: ";
     cin.ignore(100,'\n');
@@ -37,10 +36,6 @@ void Telas::CadastrarPessoa(int id){
     cout << "Pais: ";
     getline(cin, this->country);
     cout << "Pessoa cadastrada com sucesso" << endl<< endl;
-  }
-  else {
-    cout << "Numero maximo de pessoas cadastradas" << endl<< endl;
-  }
 }
 
 /*Tela chamada quando eh escolhida a opcao 2 do Menu Principal, para logar*/
@@ -113,12 +108,8 @@ int Telas::adicionarContato(Pessoa* person[10], int id){
             person[pessoaLogada-1]->adiciona(person[novoContato-1]);
             cout << endl << person[pessoaLogada-1]->getNome() << " contactado a " << person[novoContato-1]->getNome()<<endl<<endl;
         }else{
-            cout << person[novoContato-1] << " ja esta adicionado como contato!" << endl ;
-<<<<<<< HEAD
+            cout << person[novoContato-1] << " ja esta adicionado como contato!" << endl ; 
             return 1;
-=======
-            return 0;
->>>>>>> 5b05c656207e6de6d17e6669d0f297688c8934b0
         }
     }
     return 1;
