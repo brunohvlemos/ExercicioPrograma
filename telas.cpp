@@ -40,16 +40,20 @@ void Telas::CadastrarPessoa(){
 
 /*Tela chamada quando eh escolhida a opcao 2 do Menu Principal, para logar*/
 int Telas::Logar(Pessoa* person[10], int id) {
+        if(id>=0){
+            cout << "Escolha uma das pessoas:" << endl;
 
-  cout << "Escolha uma das pessoas:" << endl;
-
-        for(int i = 0; i<=(id) ; i++){
-              cout << (i+1) << ": " << person[i]->getNome() << endl;
-        }
+            for(int i = 0; i<=(id) ; i++){
+                  cout << (i+1) << ") " << person[i]->getNome() << endl;
+            }
 
         cout<< endl << "Digite um numero ou 0 para voltar" << endl<< endl;
         cin >> pessoaLogada;
         return pessoaLogada;
+        }
+        else
+            cout << "Nao ha nenhuma pessoa cadastrada ainda"<<endl<< endl;
+        return 0;
 }
 
 /*Tela chamada para aparecerem as opcoes de uma pessoa que ja logou*/
@@ -73,10 +77,12 @@ int Telas::mensagensEnviadas(Pessoa* person[10]){
 int Telas::mensagensRecebidas(Pessoa* person[10]){
     cout << "Mensagens Recebidas" << endl << "-----------------------" << endl;
     person[pessoaLogada-1]->listaRecebidas->getMensagens();
-    cout << "Digite o numero da mensagem para curtir ou 0 para voltar:";
-    cin >> i;
-    if(i!=0)
-        person[pessoaLogada-1]->listaRecebidas->procurar(i-1)->msg->curtir();
+    if(person[pessoaLogada-1]->listaRecebidas->getTamanho()>0){
+        cout << "Digite o numero da mensagem para curtir ou 0 para voltar:";
+        cin >> i;
+        if(i!=0)
+            person[pessoaLogada-1]->listaRecebidas->procurar(i-1)->msg->curtir();
+    }
     return 1;
 };
 
